@@ -6,25 +6,25 @@ int sum(int *[],int,int);
 void lineMaxValue(int *[],int,int);
 
 int main(){
-   int n = 3;
-   int m = 4;
+   int n = 0;
+   int m = 0;
    std::cout << "Enter n size: ";
    std::cin >> n;
    std::cout << "Enter m size: ";
    std::cin >> m;
-   int** a = new int*[m];
+   int** a = new int*[n];
  
-   for (int i = 0; i < m; i++){
-       a[i] = new int[n];
+   for (int i = 0; i < n; i++){
+       a[i] = new int[m];
    }
 
 
-   for (int i = 0; i < m; i++) {
-     for (int j = 0; j < n; j++) {
+   for (int i = 0; i < n; i++) {
+     for (int j = 0; j < m; j++) {
          std::cout << "Enter values: ";
          std::cin >> a[i][j];
      }
-        std::cout << std:: endl;
+       std::cout << std:: endl;
    }
  
    printArr(a,n,m);
