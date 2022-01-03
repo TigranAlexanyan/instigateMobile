@@ -1,25 +1,33 @@
 #include <iostream>
 
-int findElemIndex(int[],int,int);
+int getMaxElemIndex(const int*,unsigned int);
+int getMaxElem(const int*,unsigned int);
 
 int main(){
-  int el = 0;
-  std::cout << "Enter number: ";
-  std::cin >> el; 
-  int arr[] = {1,2,3,4,5};
+  int arr[] = {10,12,13,14,18};
   int size = sizeof(arr)/sizeof(int);
-  std::cout << findElemIndex(arr,el,size) <<"\n";
+  std::cout << getMaxElemIndex(arr,size) <<"\n";
+  std::cout << getMaxElem(arr,size) <<"\n";
 }
 
-int findElemIndex(int arr[],int el,int size){ 
-   for(int i=0;i<size;i++){
-      if (arr[i] == el) {
-         return i;
+int getMaxElemIndex(const int * arr,unsigned int size){
+   int maxIndex = 0;  
+   for(int i=1;i<size;i++){
+      if (arr[i] > arr[maxIndex]) {
+          maxIndex = i;
       }
    }
-   return -1;
+   return maxIndex;
 }
 
-
+int getMaxElem(const int * arr,unsigned int size){
+    int maxElem = arr[0];
+    for(int i = 1;i<size;i++){
+       if (arr[i] > maxElem){
+           maxElem = arr[i];
+       }
+    }
+    return maxElem;
+}
 
 

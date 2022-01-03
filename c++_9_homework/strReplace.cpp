@@ -27,24 +27,21 @@ int strLength(char str[]){
 
 char *strReplace(char str[],char old,char newr,bool replaceAll){
     int length = strLength(str);
+    for(int i=0;i<length;i++){
     if(replaceAll){
-      for(int i=0;i<length;i++){
-         if(str[i] == old){
-            str[i] = newr;
-         }
+      if(str[i] == old){
+          str[i] = newr;
       }
-      return str;
     } else {
-       for(int i = 0;i<length;i++){
-          if(str[i] == old){
-            str[i] = newr;
-            if(true){
-                break;
-            }
+       if(str[i] == old){
+          str[i] = newr;
+          if(true){
+            break;
           }
        }
-      return str;
     }
+  }
+  return str;
 }
 
 

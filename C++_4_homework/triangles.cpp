@@ -73,7 +73,7 @@ int main(){
       case 'B': printStarRight(num,op);break; 
       case 'C': printStarLeftDown(num,op);break;
       case 'D': printStarRightDown(num,op);break;
-      default: equilateralTriangle(num,op);break;
+      default 'E': equilateralTriangle(num,op);
     }
    
 }
