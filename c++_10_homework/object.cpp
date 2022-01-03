@@ -31,16 +31,16 @@ struct Person {
       gender = g;
     }
 
-    void getName(){
-       std::cout << "My name is " << name <<"\n";
+    std:: string getName(){
+      return name;
     };
 
-    void getAge(){
-      std::cout << "My age is " << age <<"\n";
+    int getAge(){
+      return age;
     }; 
 
-    void getGender(){ 
-       std::cout << "My gender is " << gender <<"\n"; 
+    char getGender(){ 
+       return  gender; 
     };    
  
 };
@@ -59,9 +59,9 @@ int main(){
    std:: cout << "Enter your gender: ";
    std:: cin >> g;
    p.setGender(g);
-   p.getName();
-   p.getAge();
-   p.getGender();
+   std::cout << "My name is " << p.getName() <<"\n";
+   std::cout << "My age is " << p.getAge() <<"\n";
+   std::cout << "My gender is " << p.getGender() <<"\n";
 }
 
 
