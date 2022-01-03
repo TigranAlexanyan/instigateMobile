@@ -2,9 +2,9 @@
 
 using namespace std;
 
-int strlen(char[]);
-char *swap(char[]);
-char *LowerStr(char[]);
+int strlen(char *);
+char *swap(char *);
+char *LowerStr(char *);
 
 int main(){
   char str[8] = "HELLO";
@@ -12,7 +12,7 @@ int main(){
   cout << LowerStr(str) <<"\n";
 }
 
-int strlen(char str[]){
+int strlen(char* str){
    int length = 0;
    while(str[length] != '\0'){
        ++length;
@@ -20,7 +20,7 @@ int strlen(char str[]){
    return length;
 }
 
-char *swap(char str[]){
+char *swap(char* str){
   int length = strlen(str);
  for(int i = 0;i<length/2;i++){
      char ch = str[i];
@@ -30,7 +30,7 @@ char *swap(char str[]){
   return str;
 }
 
-char *LowerStr(char str[]){
+char *LowerStr(char* str){
   int length = strlen(str); 
   for(int i = 0; i< length;i++){
   if(str[i] >='A' && str[i] <= 'Z'){

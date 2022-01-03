@@ -1,9 +1,9 @@
 #include <iostream>
 
 
-void printArr(int *[],int,int);
-int sum(int *[],int,int);
-void lineMaxValue(int *[],int,int);
+void printArr(int[],int,int);
+int sum(int[],int,int);
+void lineMaxValue(int[],int,int);
 
 int main(){
    int n = 0;
@@ -12,7 +12,7 @@ int main(){
    std::cin >> n;
    std::cout << "Enter m size: ";
    std::cin >> m;
-   int** a = new int*[n];
+  /* int** a = new int*[n];
  
    for (int i = 0; i < n; i++){
        a[i] = new int[m];
@@ -25,14 +25,15 @@ int main(){
          std::cin >> a[i][j];
      }
        std::cout << std:: endl;
-   }
+   }*/
+   int a[n][m] = {{0},{0}}
  
-   printArr(a,n,m);
-   std:: cout << "Sum: " << sum(a,n,m) <<"\n";
-   lineMaxValue(a,n,m);
+   printArr(a);
+   std:: cout << "Sum: " << sum(a) <<"\n";
+   lineMaxValue(a);
 }
 
-void printArr(int *arr[],int n, int m){
+void printArr(int arr[n][m]){
    for(int i = 0;i<n;i++){
       for(int j = 0;j<m;j++){
          std::cout << arr[i][j] <<"\n";
@@ -41,7 +42,7 @@ void printArr(int *arr[],int n, int m){
 }
 
 
-int sum(int *arr[],int n, int m){
+int sum(int arr[n][m]){
     int sum = 0;
     for(int i = 0;i<n;i++){
      for(int j = 0;j<m;j++){
@@ -51,11 +52,11 @@ int sum(int *arr[],int n, int m){
     return sum;
 }
 
-void lineMaxValue(int *arr[],int n,int m){
+void lineMaxValue(int arr[n][m]){
    int maxValue = arr[0][0];
    for(int i = 0;i < n;i++){
      for(int j = 0;j <m;j++){
-        if(maxValue < arr[i][j]){
+        if(maxValue < arr[i][j]) {
             maxValue = arr[i][j];
         }
      }
